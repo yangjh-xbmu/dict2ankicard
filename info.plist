@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>cn.yangzh.zidian</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>0AE8F54D-F878-4AC6-80FA-226788D3AD4A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C2207FAC-C6E9-4A95-9BEE-9308B7F22B65</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4C15D063-65D6-4196-807E-FEB9D4FD5F51</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>4C15D063-65D6-4196-807E-FEB9D4FD5F51</key>
+		<array/>
+		<key>FB689984-6E78-42EC-9788-0752F6120E30</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0AE8F54D-F878-4AC6-80FA-226788D3AD4A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>yangzh</string>
+	<key>description</key>
+	<string>从百度词典中获取信息，然后制作卡片插入到 Anki。</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>汉语查询及卡片制作</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/Anki.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>C2207FAC-C6E9-4A95-9BEE-9308B7F22B65</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>1</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>argumenttext</key>
+				<string>zd </string>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>-1</integer>
+				<key>hotmod</key>
+				<integer>262144</integer>
+				<key>hotstring</key>
+				<string>double tap</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>FB689984-6E78-42EC-9788-0752F6120E30</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>zd</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>请稍等</string>
+				<key>script</key>
+				<string>/usr/bin/python main.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>查询词语拼音及解释</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0AE8F54D-F878-4AC6-80FA-226788D3AD4A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python anki.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4C15D063-65D6-4196-807E-FEB9D4FD5F51</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>该插件的主要目的是提高制作 Anki 汉语生词卡的效率。
+
+工作环境：
+
+Alferd3 Chrome ChromeDriver Anki AnkiConnect
+
+
+主要功能：
+
+
+输入zd，启动查询
+查询结果，回车后，制作卡片，插入到 Anki。
+双击Command，查询当前选中文字</string>
+	<key>uidata</key>
+	<dict>
+		<key>0AE8F54D-F878-4AC6-80FA-226788D3AD4A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>280</integer>
+			<key>ypos</key>
+			<integer>250</integer>
+		</dict>
+		<key>4C15D063-65D6-4196-807E-FEB9D4FD5F51</key>
+		<dict>
+			<key>xpos</key>
+			<integer>590</integer>
+			<key>ypos</key>
+			<integer>340</integer>
+		</dict>
+		<key>C2207FAC-C6E9-4A95-9BEE-9308B7F22B65</key>
+		<dict>
+			<key>xpos</key>
+			<integer>590</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>FB689984-6E78-42EC-9788-0752F6120E30</key>
+		<dict>
+			<key>note</key>
+			<string>双击设置快捷方式</string>
+			<key>xpos</key>
+			<integer>60</integer>
+			<key>ypos</key>
+			<integer>250</integer>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>1.0</string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
