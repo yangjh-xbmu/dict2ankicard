@@ -14,11 +14,10 @@
 
 1. 输入zd，启动查询。
 
-![查询演示](http://img.cdn.zenmexuexi.com/1558611698.gif?imageMogr2/thumbnail/!100p)
+   ![查询演示](http://img.cdn.zenmexuexi.com/1558611698.gif?imageMogr2/thumbnail/!100p)
 
 1. 回车确认查询结果后，自动制作卡片，插入到 Anki。
 
-![插入到Anki](http://img.cdn.zenmexuexi.com/1558611791.gif?imageMogr2/thumbnail/!100p)
-
+  ![插入到Anki](http://img.cdn.zenmexuexi.com/1558611791.gif?imageMogr2/thumbnail/!100p)
 
 1. 双击Command，可查询当前选中文字。
