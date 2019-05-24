@@ -53,8 +53,11 @@ def main(wf):
         ]
     }
     # 添加到Anki
-    invoke('addNote', note=note)
-    notify(title=u'已成功添加卡片信息', text=user_dict['word'])
+    try:
+        invoke('addNote', note=note)
+        notify(title=u'已成功添加卡片信息', text=user_dict['word'])
+    except:
+        notify(u'添加卡片失败！')
     # Send output to Alfred
     wf.send_feedback()
 
