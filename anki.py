@@ -39,7 +39,7 @@ def main(wf):
     back = user_dict['word'] + '<br>' + jieshi
     # 添加卡片信息
     note = {
-        "deckName": u"字词",
+        "deckName": u"汉语字词及成语",
         "modelName": "Basic",
         "fields": {
             "Front": front,
@@ -56,8 +56,8 @@ def main(wf):
     try:
         invoke('addNote', note=note)
         notify(title=u'已成功添加卡片信息', text=user_dict['word'])
-    except:
-        notify(u'添加卡片失败！')
+    except Exception, e:
+        notify(title=u'添加卡片失败！', text=str(e))
     # Send output to Alfred
     wf.send_feedback()
 
