@@ -11,6 +11,8 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 
+# anki connect 文档示例代码
+
 def request(action, **params):
     return {'action': action, 'params': params, 'version': 6}
 
@@ -56,6 +58,7 @@ def main(wf):
     try:
         invoke('addNote', note=note)
         notify(title=u'已成功添加卡片信息', text=user_dict['word'])
+    # 捕捉异常信息
     except Exception, e:
         notify(title=u'添加卡片失败！', text=str(e))
     # Send output to Alfred
